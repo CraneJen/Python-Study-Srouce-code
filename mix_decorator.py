@@ -1,11 +1,11 @@
 from functools import wraps
-import types
+# import types
 import datetime
 
 
 def log(arg):
-    if isinstance(arg, types.FunctionType):
-        # if not type(arg) is str:
+    # if isinstance(arg, types.FunctionType):
+    if not type(arg) == str:
         @wraps(arg)
         def wrapper(*args, **kwargs):
             print('start {name}()...'.format(name=arg.__name__))
