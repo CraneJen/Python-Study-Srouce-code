@@ -5,8 +5,9 @@ DATABASES = {
         'database': 'test'
     },
     'postgres': {
-        'user': 'test',
-        'password': 'password',
-        'dbname': 'test',
+        'user': 'cj',
+        'password': 'cj',
+        'dbname': 'cj',
+        'port': 5532
     }
 }

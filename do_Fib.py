@@ -1,14 +1,15 @@
 class Fib(object):
 
-    def __init__(self):
+    def __init__(self, max):
         self.a, self.b = 0, 1
+        self.max = max
 
     def __iter__(self):
         return self
 
     def __next__(self):
         self.a, self.b = self.b, self.a + self.b
-        if self.a > 100000:
+        if self.a > self.max:
             raise StopIteration()
         return self.a
 
@@ -50,37 +51,39 @@ class Fib2(object):
             return L_step
 
 
-def fib(n):
+def fib1(max):
     a, b = 0, 1
-    while b < n:
+    while b < max:
         print(b, end=' ')
         a, b = b, a + b
-    print()
 
 
-def fib2(n):
+def fib2(max):
     result = []
     a, b = 0, 1
-    while b < n:
+    while b < max:
         result.append(b)
         a, b = b, a + b
     return result
 
 
 def fib3(max):
-    a, b, n = 0, 1, 0
-    while n < max:
+    a, b = 0, 1
+    while max > 0:
         print(b, end=' ')
         a, b = b, a + b
-        n = n + 1
+        max -= 1
 
 
 # yield
 
 
 def fib4(max):
-    a, b, n = 0, 1, 0
-    while n < max:
+    a, b = 0, 1
+    while max > 0:
         yield b
         a, b = b, a + b
-        n = n + 1
+        max -= 1
+
+
+print([i for i in fib4(10)])

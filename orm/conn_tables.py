@@ -51,7 +51,7 @@ def create_database(cur):
             "CREATE DATABASE {dbname} DEFAULT CHARACTER SET 'utf8'".format(dbname=DB_name)
         )
     except mysql.connector.Error as err:
-        print('Failed creating database: (err)'.format(err=err))
+        print('Failed creating database: {err}'.format(err=err))
         exit(1)
 
 
