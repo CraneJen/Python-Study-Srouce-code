@@ -1,3 +1,5 @@
+# vscode
+.vscode
 # database
 *.sqlite3
 # Byte-compiled / optimized / DLL files
